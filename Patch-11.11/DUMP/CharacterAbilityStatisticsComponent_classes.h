@@ -1,0 +1,75 @@
+// BlueprintGeneratedClass CharacterAbilityStatisticsComponent.CharacterAbilityStatisticsComponent_C
+// Size: 0x288 (Inherited: 0x108)
+struct UCharacterAbilityStatisticsComponent_C : UGameStatisticsComponent {
+	struct FPointerToUberGraphFrame UberGraphFrame; // 0x108(0x08)
+	struct TArray<struct FCharacterAbilityCastInfo> AuthAbilityCasts; // 0x110(0x10)
+	int32_t MostRecentCast; // 0x120(0x04)
+	char pad_124[0x4]; // 0x124(0x04)
+	struct TArray<struct FAbilityUsageEvent> TelemetryCastEvents; // 0x128(0x10)
+	struct AShooterCharacter* OwningCharacter; // 0x138(0x08)
+	struct AAresEquippable* OwningEquippable; // 0x140(0x08)
+	struct TMap<enum class ECharacterAbilityStatisticList, struct FText> StatToLocalizedTextMap; // 0x148(0x50)
+	double RoundStartTime; // 0x198(0x08)
+	struct UBaseTeamComponent* TeamComponent; // 0x1a0(0x08)
+	bool ReclaimableAbility; // 0x1a8(0x01)
+	char pad_1A9[0x7]; // 0x1a9(0x07)
+	struct TMap<enum class ECharacterAbilityStatisticList, enum class EAbilityStatisticAccumulationType> StatToAccumulationType; // 0x1b0(0x50)
+	bool bAutoTrackDestroyedCount; // 0x200(0x01)
+	char pad_201[0x7]; // 0x201(0x07)
+	struct TArray<struct FAbilityTelemetryEventPackage> TelemetryUsageEvents; // 0x208(0x10)
+	enum class EAbilityUsageLocationType TelemetryEffectLocationType; // 0x218(0x01)
+	bool bShouldInferAbilityLocationType; // 0x219(0x01)
+	char pad_21A[0x6]; // 0x21a(0x06)
+	struct FMulticastInlineDelegate OnCharacterAbilityStatisticsChanged; // 0x220(0x10)
+	bool bUseAltCombatReportLocationType; // 0x230(0x01)
+	enum class EAbilityUsageLocationType AltCombatReportLocationType; // 0x231(0x01)
+	char pad_232[0x6]; // 0x232(0x06)
+	struct TSet<enum class ECharacterAbilityStatisticList> AffectedCharMustBeAliveStats; // 0x238(0x50)
+
+	void GetRoundTime(double& RoundTime); // Function CharacterAbilityStatisticsComponent.CharacterAbilityStatisticsComponent_C.GetRoundTime // (Public|HasOutParms|BlueprintCallable|BlueprintEvent) // @ game+0x19be2f0
+	struct AShooterPlayerState* Get Player State(); // Function CharacterAbilityStatisticsComponent.CharacterAbilityStatisticsComponent_C.Get Player State // (Private|HasOutParms|BlueprintCallable|BlueprintEvent|BlueprintPure) // @ game+0x19be2f0
+	void GetCombatReportLoctionType(enum class EAbilityUsageLocationType& Type); // Function CharacterAbilityStatisticsComponent.CharacterAbilityStatisticsComponent_C.GetCombatReportLoctionType // (Public|HasOutParms|BlueprintCallable|BlueprintEvent|BlueprintPure) // @ game+0x19be2f0
+	void Reset(); // Function CharacterAbilityStatisticsComponent.CharacterAbilityStatisticsComponent_C.Reset // (Public|BlueprintCallable|BlueprintEvent) // @ game+0x19be2f0
+	void GetCastTime(double PhaseTime, enum class EAresGamePhase PhaseName, double& CastTime); // Function CharacterAbilityStatisticsComponent.CharacterAbilityStatisticsComponent_C.GetCastTime // (Private|HasOutParms|BlueprintCallable|BlueprintEvent|BlueprintPure) // @ game+0x19be2f0
+	void AuthAppendTelemetryEventLocation(int32_t EventID, struct FVector NewLocation); // Function CharacterAbilityStatisticsComponent.CharacterAbilityStatisticsComponent_C.AuthAppendTelemetryEventLocation // (Public|BlueprintCallable|BlueprintEvent) // @ game+0x19be2f0
+	void AuthUpdateTelemetryEventLocation(int32_t EventID, struct FVector NewLocation); // Function CharacterAbilityStatisticsComponent.CharacterAbilityStatisticsComponent_C.AuthUpdateTelemetryEventLocation // (Public|HasDefaults|BlueprintCallable|BlueprintEvent) // @ game+0x19be2f0
+	bool AuthShouldInferAbilityLocationType(); // Function CharacterAbilityStatisticsComponent.CharacterAbilityStatisticsComponent_C.AuthShouldInferAbilityLocationType // (BlueprintAuthorityOnly|Event|Public|HasOutParms|BlueprintCallable|BlueprintEvent) // @ game+0x19be2f0
+	void AuthUpdateAbilityLocationType(enum class EAbilityUsageLocationType LocationType); // Function CharacterAbilityStatisticsComponent.CharacterAbilityStatisticsComponent_C.AuthUpdateAbilityLocationType // (BlueprintAuthorityOnly|Event|Public|BlueprintCallable|BlueprintEvent) // @ game+0x19be2f0
+	void AuthAppendCastAbilityEffectLocation(int32_t Index, struct FVector EffectLocation); // Function CharacterAbilityStatisticsComponent.CharacterAbilityStatisticsComponent_C.AuthAppendCastAbilityEffectLocation // (Public|HasDefaults|BlueprintCallable|BlueprintEvent) // @ game+0x19be2f0
+	void AuthClearCastAbilityEffectLocations(int32_t Index); // Function CharacterAbilityStatisticsComponent.CharacterAbilityStatisticsComponent_C.AuthClearCastAbilityEffectLocations // (Public|HasDefaults|BlueprintCallable|BlueprintEvent) // @ game+0x19be2f0
+	void AuthSetTelemetryDestroyedCount(int32_t EventID, int32_t DestroyedCount); // Function CharacterAbilityStatisticsComponent.CharacterAbilityStatisticsComponent_C.AuthSetTelemetryDestroyedCount // (Public|BlueprintCallable|BlueprintEvent) // @ game+0x19be2f0
+	void GetBestCastIndexForReporter(struct AActor* Reporter, int32_t& CastIndex); // Function CharacterAbilityStatisticsComponent.CharacterAbilityStatisticsComponent_C.GetBestCastIndexForReporter // (Public|HasOutParms|BlueprintCallable|BlueprintEvent|BlueprintPure) // @ game+0x19be2f0
+	void Auth Create Telemetry Usage Event with Stats(struct FVector EventLocation, struct TArray<struct FAbilityTelemetryStasticParameters>& Stats, struct AActor* CastLookupActor, int32_t& EventID); // Function CharacterAbilityStatisticsComponent.CharacterAbilityStatisticsComponent_C.Auth Create Telemetry Usage Event with Stats // (Public|HasOutParms|BlueprintCallable|BlueprintEvent) // @ game+0x19be2f0
+	void Auth Add Effected Player to Telemetry Event(int32_t EventID, enum class ECharacterAbilityStatisticList Statistic, struct AShooterCharacter*& Player, enum class EAresAlliance Alliance, double PlayerValue); // Function CharacterAbilityStatisticsComponent.CharacterAbilityStatisticsComponent_C.Auth Add Effected Player to Telemetry Event // (Public|HasOutParms|BlueprintCallable|BlueprintEvent) // @ game+0x19be2f0
+	void ConvertEffectInfosToTelemetryEffectInfos(struct TArray<struct FCharacterAbilityEffectInfo>& InEffectInfo, struct TArray<struct FAbilityEffectInfo>& OutTelemetryEffectInfos); // Function CharacterAbilityStatisticsComponent.CharacterAbilityStatisticsComponent_C.ConvertEffectInfosToTelemetryEffectInfos // (Public|HasOutParms|HasDefaults|BlueprintCallable|BlueprintEvent) // @ game+0x19be2f0
+	void Auth Add Telemetry Statistic(int32_t EventID, enum class ECharacterAbilityStatisticList Stat, enum class EAresAlliance Alliance, double Value, struct AShooterCharacter* AffectedCharacter); // Function CharacterAbilityStatisticsComponent.CharacterAbilityStatisticsComponent_C.Auth Add Telemetry Statistic // (Public|BlueprintCallable|BlueprintEvent) // @ game+0x19be2f0
+	void AuthCreateTelemetryUsageEvent(struct FVector Location, struct AActor* CastLookupActor, int32_t& EventID); // Function CharacterAbilityStatisticsComponent.CharacterAbilityStatisticsComponent_C.AuthCreateTelemetryUsageEvent // (Public|HasOutParms|HasDefaults|BlueprintCallable|BlueprintEvent) // @ game+0x19be2f0
+	void AuthCommitTelemetryUsageEvents(bool NewParam); // Function CharacterAbilityStatisticsComponent.CharacterAbilityStatisticsComponent_C.AuthCommitTelemetryUsageEvents // (Private|HasDefaults|BlueprintCallable|BlueprintEvent) // @ game+0x19be2f0
+	void AuthAddTempTelemetryUsageEvent(enum class ECharacterAbilityStatisticList Statistic, double Value, struct FVector Location, struct AShooterPlayerState* AffectedPlayer, double AffectedPlayerValue); // Function CharacterAbilityStatisticsComponent.CharacterAbilityStatisticsComponent_C.AuthAddTempTelemetryUsageEvent // (Public|HasDefaults|BlueprintCallable|BlueprintEvent) // @ game+0x19be2f0
+	void AuthIncrementAbilityDestroyedCount(int32_t DestroyedCount, int32_t CastIndex); // Function CharacterAbilityStatisticsComponent.CharacterAbilityStatisticsComponent_C.AuthIncrementAbilityDestroyedCount // (Public|BlueprintCallable|BlueprintEvent) // @ game+0x19be2f0
+	void AddAbilityStatisticToArray(struct TArray<struct FCharacterAbilityEffectInfo>& InOutEffectArray, enum class ECharacterAbilityStatisticList Stat, enum class EAresAlliance Alliance, double Value, struct AShooterCharacter* AffectedCharacter); // Function CharacterAbilityStatisticsComponent.CharacterAbilityStatisticsComponent_C.AddAbilityStatisticToArray // (Public|HasOutParms|HasDefaults|BlueprintCallable|BlueprintEvent) // @ game+0x19be2f0
+	void AuthAddAbilityStatistic_New(enum class ECharacterAbilityStatisticList Stat, enum class EAresAlliance Alliance, double Value, int32_t CastIndex, struct AShooterCharacter* AffectedCharacter); // Function CharacterAbilityStatisticsComponent.CharacterAbilityStatisticsComponent_C.AuthAddAbilityStatistic_New // (Public|BlueprintCallable|BlueprintEvent) // @ game+0x19be2f0
+	int32_t GetLatestCastIndex(); // Function CharacterAbilityStatisticsComponent.CharacterAbilityStatisticsComponent_C.GetLatestCastIndex // (BlueprintAuthorityOnly|Event|Public|HasOutParms|BlueprintCallable|BlueprintEvent) // @ game+0x19be2f0
+	void CreateAbilityEffectInfo(enum class ECharacterAbilityStatisticList Statistic, double AggregateValue, struct AShooterPlayerState* AffectedPlayer, double AffectedPlayerValue, struct FCharacterAbilityEffectInfo& CharacterAbilityEffectInfo); // Function CharacterAbilityStatisticsComponent.CharacterAbilityStatisticsComponent_C.CreateAbilityEffectInfo // (Private|HasOutParms|HasDefaults|BlueprintCallable|BlueprintEvent) // @ game+0x19be2f0
+	void CreateAbilityCastInfo(struct FVector Location, struct FCharacterAbilityCastInfo& CastInfo); // Function CharacterAbilityStatisticsComponent.CharacterAbilityStatisticsComponent_C.CreateAbilityCastInfo // (Public|HasOutParms|HasDefaults|BlueprintCallable|BlueprintEvent|BlueprintPure) // @ game+0x19be2f0
+	void AuthAddAbilityStatisticToNewestCast(enum class ECharacterAbilityStatisticList Stat, double Value, struct AShooterCharacter* AffectedCharacter); // Function CharacterAbilityStatisticsComponent.CharacterAbilityStatisticsComponent_C.AuthAddAbilityStatisticToNewestCast // (Public|BlueprintCallable|BlueprintEvent) // @ game+0x19be2f0
+	void AuthAddEffectedPlayerToNewestCast(enum class ECharacterAbilityStatisticList Statistic, struct AShooterCharacter*& Player, enum class EAresAlliance Alliance); // Function CharacterAbilityStatisticsComponent.CharacterAbilityStatisticsComponent_C.AuthAddEffectedPlayerToNewestCast // (Public|HasOutParms|BlueprintCallable|BlueprintEvent) // @ game+0x19be2f0
+	void AuthAddEffectedPlayer(int32_t CastIndex, enum class ECharacterAbilityStatisticList Statistic, struct AShooterCharacter*& Player, enum class EAresAlliance Alliance); // Function CharacterAbilityStatisticsComponent.CharacterAbilityStatisticsComponent_C.AuthAddEffectedPlayer // (Public|HasOutParms|BlueprintCallable|BlueprintEvent) // @ game+0x19be2f0
+	void GetValidCastIndex(int32_t CastIndex, int32_t& ValidIndex); // Function CharacterAbilityStatisticsComponent.CharacterAbilityStatisticsComponent_C.GetValidCastIndex // (Public|HasOutParms|BlueprintCallable|BlueprintEvent) // @ game+0x19be2f0
+	int32_t AuthCastAbility(struct FVector AbilityLocation); // Function CharacterAbilityStatisticsComponent.CharacterAbilityStatisticsComponent_C.AuthCastAbility // (BlueprintAuthorityOnly|Event|Public|HasOutParms|HasDefaults|BlueprintCallable|BlueprintEvent) // @ game+0x19be2f0
+	void AuthAddAbilityStatistic(enum class ECharacterAbilityStatisticList Stat, enum class EAresAlliance Alliance, double Value, int32_t CastIndex, struct AShooterCharacter* AffectedCharacter); // Function CharacterAbilityStatisticsComponent.CharacterAbilityStatisticsComponent_C.AuthAddAbilityStatistic // (BlueprintCallable|BlueprintEvent) // @ game+0x19be2f0
+	void ReceiveBeginPlay(); // Function CharacterAbilityStatisticsComponent.CharacterAbilityStatisticsComponent_C.ReceiveBeginPlay // (Event|Public|BlueprintEvent) // @ game+0x19be2f0
+	void AuthUpdateEffectLocation(int32_t CastIndex, struct FVector Location); // Function CharacterAbilityStatisticsComponent.CharacterAbilityStatisticsComponent_C.AuthUpdateEffectLocation // (BlueprintCallable|BlueprintEvent) // @ game+0x19be2f0
+	void OnRoundBegin_Event_1(int32_t RoundNumberBeginning); // Function CharacterAbilityStatisticsComponent.CharacterAbilityStatisticsComponent_C.OnRoundBegin_Event_1 // (BlueprintCallable|BlueprintEvent) // @ game+0x19be2f0
+	void OnPhaseChange_Event_1(enum class EAresGamePhase NewPhase); // Function CharacterAbilityStatisticsComponent.CharacterAbilityStatisticsComponent_C.OnPhaseChange_Event_1 // (BlueprintCallable|BlueprintEvent) // @ game+0x19be2f0
+	void AuthItemOnSetOwner_Event_1(struct AAresItem* Item, struct AActor* PrevOwner, struct AActor* NewOwner); // Function CharacterAbilityStatisticsComponent.CharacterAbilityStatisticsComponent_C.AuthItemOnSetOwner_Event_1 // (BlueprintCallable|BlueprintEvent) // @ game+0x19be2f0
+	void OnRoundEnd_Event_1(int32_t RoundNumberEnding); // Function CharacterAbilityStatisticsComponent.CharacterAbilityStatisticsComponent_C.OnRoundEnd_Event_1 // (BlueprintCallable|BlueprintEvent) // @ game+0x19be2f0
+	void HandleAbilitySpawnedSubActor(int32_t CastIndex, struct AActor* SubActor); // Function CharacterAbilityStatisticsComponent.CharacterAbilityStatisticsComponent_C.HandleAbilitySpawnedSubActor // (BlueprintCallable|BlueprintEvent) // @ game+0x19be2f0
+	void HandleSubActorPreDeath(struct UDamageResponse* Response); // Function CharacterAbilityStatisticsComponent.CharacterAbilityStatisticsComponent_C.HandleSubActorPreDeath // (BlueprintCallable|BlueprintEvent) // @ game+0x19be2f0
+	void OnSubActorDestroyed(struct AActor* DestroyedActor); // Function CharacterAbilityStatisticsComponent.CharacterAbilityStatisticsComponent_C.OnSubActorDestroyed // (BlueprintCallable|BlueprintEvent) // @ game+0x19be2f0
+	void AuthClearAbilityLocationsWithIndex(int32_t CastIndex); // Function CharacterAbilityStatisticsComponent.CharacterAbilityStatisticsComponent_C.AuthClearAbilityLocationsWithIndex // (BlueprintAuthorityOnly|Event|Public|BlueprintCallable|BlueprintEvent) // @ game+0x19be2f0
+	void AuthUpdateAbilityLocationWithIndex(int32_t CastIndex, struct FVector AbilityLocation); // Function CharacterAbilityStatisticsComponent.CharacterAbilityStatisticsComponent_C.AuthUpdateAbilityLocationWithIndex // (BlueprintAuthorityOnly|Event|Public|BlueprintCallable|BlueprintEvent) // @ game+0x19be2f0
+	void ExecuteUbergraph_CharacterAbilityStatisticsComponent(int32_t EntryPoint); // Function CharacterAbilityStatisticsComponent.CharacterAbilityStatisticsComponent_C.ExecuteUbergraph_CharacterAbilityStatisticsComponent // (Final|UbergraphFunction|HasDefaults) // @ game+0x19be2f0
+	void OnCharacterAbilityStatisticsChanged__DelegateSignature(); // Function CharacterAbilityStatisticsComponent.CharacterAbilityStatisticsComponent_C.OnCharacterAbilityStatisticsChanged__DelegateSignature // (Public|Delegate|BlueprintCallable|BlueprintEvent) // @ game+0x19be2f0
+};
+
